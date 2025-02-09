@@ -839,7 +839,7 @@ nav.breadcrumb-nav ul li:last-child:after {content:"";}
     cursor:pointer;
     line-height:3;
   }
-  
+  /*
     .whatsapp-icon img {
        width: 70%;
        min-width: 80px;
@@ -878,7 +878,42 @@ nav.breadcrumb-nav ul li:last-child:after {content:"";}
          overflow-wrap: break-word;
          display: inline-block;
        }
-     
+     */
+
+
+            .whatsapp-icon img {
+              width: 80px;
+              height: auto;
+            }
+      
+            .mobile-bg {
+              background-size: contain;
+              background-position: center;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: auto;
+              min-height: 150px;
+            }
+      
+            .correo {
+              display: flex;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 5px;
+            }
+      
+            .correo .icon-globe_black {
+              flex-shrink: 0;
+              font-size: 18px;
+              margin-right: 5px;
+            }
+      
+            .correo .text-primary-hover {
+              font-size: 14px;
+              word-break: break-word;
+              overflow-wrap: break-word;
+            }
+            
      
   .top-nav li a {background:none repeat scroll 0 0 #1c3849;}
   .top-nav > ul {
