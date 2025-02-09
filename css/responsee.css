@@ -839,12 +839,6 @@ nav.breadcrumb-nav ul li:last-child:after {content:"";}
     cursor:pointer;
     line-height:3;
   }
-  .correo {
-      display: inline-block;
-      max-width: 100%;
-      font-size: 14px;
-      word-wrap: break-word;
-      }
   
     .whatsapp-icon img {
        width: 70%;
@@ -853,43 +847,39 @@ nav.breadcrumb-nav ul li:last-child:after {content:"";}
        height: auto;
      }
 
-    .desarrollador1 {
-       background-size: contain;
-       background-position: center center;
-       background-repeat: no-repeat;
-       min-height: 200px;
-    }
-
-    .mobile-bg {
-      background-size: contain !important;
-      background-position: center center !important;
-      background-repeat: no-repeat !important;
-      width: 100% !important;
-      height: auto !important;
-      min-height: 150px;
-      
-    }
- 
-        @media screen and (max-width: 768px) {
-          .correo {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-          }
-    
-          .correo .icon-globe_black {
-            flex-shrink: 0;
-            margin-right: 5px;
-          }
-    
-          .correo .text-primary-hover {
-            font-size: 14px !important;
-            word-break: break-word;
-            overflow-wrap: break-word;
-          }
-        }
+       .mobile-bg {
+         background-size: contain;
+         background-position: center center;
+         background-repeat: no-repeat;
+         width: 100%;
+         height: auto;
+         min-height: 150px;
+         display: block;
+         
+       }
      
-   
+       .correo {
+         display: flex;
+         align-items: center;
+         flex-wrap: wrap;
+         gap: 5px;
+         
+       }
+  
+       .correo .icon-globe_black {
+         flex-shrink: 0;
+         font-size: 18px;
+         
+       }
+  
+       .correo .text-primary-hover {
+         font-size: 14px;
+         word-break: break-word;
+         overflow-wrap: break-word;
+         display: inline-block;
+       }
+     
+     
   .top-nav li a {background:none repeat scroll 0 0 #1c3849;}
   .top-nav > ul {
     height:0;
