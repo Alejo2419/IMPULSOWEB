@@ -839,6 +839,20 @@ nav.breadcrumb-nav ul li:last-child:after {content:"";}
     cursor:pointer;
     line-height:3;
   }
+  .correo {
+      display: inline-block;
+      max-width: 100%;
+      font-size: 14px;
+      word-wrap: break-word;
+      }
+  
+    .whatsapp-icon img {
+       width: 70%;
+       min-width: 80px;
+       max-width: 120px;
+       height: auto;
+     }
+   
   .top-nav li a {background:none repeat scroll 0 0 #1c3849;}
   .top-nav > ul {
     height:0;
