@@ -369,6 +369,12 @@ ul.chevron .submenu > a::after, ul.chevron .sub-submenu > a::after, ul.chevron .
 .background-green-dark {
   background-color: #3a6a23 !important;
 }
+.background-green2 {
+  background-color: #3bee8e;
+}
+.background-blue2 {
+  background-color: #4491b5 !important;
+}
 
 
 
