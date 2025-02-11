@@ -3,7 +3,7 @@
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Free responsive business website template</title>
+    <title>Impulso web soluciones</title>
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/icons.css">
     <link rel="stylesheet" href="css/responsee.css">
@@ -16,104 +16,140 @@
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>    
  </head>
 
- <!--
-  You can change the color scheme of the page. Just change the class of the <body> tag. 
-  You can use this class: "primary-color-white", "primary-color-red", "primary-color-orange", "primary-color-blue", "primary-color-aqua", "primary-color-dark" 
-  -->
-  
-  <!--
-  Each element is able to have its own background or text color. Just change the class of the element.  
-  You can use this class: 
-  "background-white", "background-red", "background-orange", "background-blue", "background-aqua", "background-primary" 
-  "text-white", "text-red", "text-orange", "text-blue", "text-aqua", "text-primary"
-  -->
 
- <body class="size-1520 primary-color-red background-dark">
+
+ <body class="size-1520 primary-color-red">
     <!-- HEADER -->
     <header class="grid">
-      <!-- Top Navigation -->
-      <nav class="s-12 grid background-none background-primary-hightlight">
-         <!-- logo -->
-         <a href="index.html" class="m-12 l-3 padding-2x logo">
-            <img src="img/logo.svg">
-         </a>
-         <div class="top-nav s-12 l-9"> 
-            <ul class="top-ul right chevron">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about-us.html">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="gallery.html">Gallery</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-         </div>
-      </nav>
-    </header>
+        
+          <!-- Top Navigation -->
+          <nav class="s-12 grid background-none background-primary-hightlight">
+            <!-- logo -->
+            <a href="index.html" class=" l-3 margin-left padding logo">
+              <img src="img/logo_impulso_hd.svg">
+            </a>
+        
+            <div class="top-nav text-dark s-12 l-9">
+              <ul class="top-ul right chevron">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="diseño.html">Diseño Grafico</a></li>
+                <li><a href="about-us.html">Quienes Somos</a></li>
+                <li><a href="Mantenimiento.html">Contacto</a></li>
+              </ul>
+            </div>
+        
+          </nav>
+        </header>
       
       <!-- MAIN -->
       <main role="main">
         <!-- TOP SECTION -->
         <header class="grid">
         	<div class="s-12 padding-2x">
-            <h1 class="text-strong text-white text-center center text-size-60 text-uppercase margin-bottom-20">Contact Us</h1>
+            <h1 class="text-strong background-aqua text-white text-center center text-size-60 text-uppercase margin-bottom-20">Contactanos para darte atencion personalizada</h1>
           </div>
         </header>
         
         <!-- SECTION 1 -->
         <section class="grid margin-bottom-20">
           <div class="m-12 l-7 center">
-            <!-- Contact Information-->
-            <div class="s-12 padding-2x background-white text-center">                  
-              <h2 class="text-size-20 margin-bottom-10 text-strong text-uppercase text-dark">Company Address</h2>                
-              <p>Aviation Way 99</p>
-              <p>Los Angeles, USA</p>             
+            <h2>Déjanos tus datos y te contactaremos en breve</h2>
+            <form id="contactForm" class="mi-formulario" action="./controller/enviar.php" method="POST">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" name="nombre" required style="border: 2px solid #152732;">
+            
+              <label for="apellido">Apellido:</label>
+              <input type="text" id="apellido" name="apellido" required style="border: 2px solid #152732;">
+            
+              <label for="telefono">Teléfono de Contacto:</label>
+              <input type="tel" id="telefono" name="telefono" required style="border: 2px solid #152732;">
+            
+              <label for="correo">Correo Electrónico:</label>
+              <input type="email" id="correo" name="correo" required style="border: 2px solid #152732;">
+            
+              <label for="servicio">Servicio en el que está interesado:</label>
+              <select id="servicio" name="servicio" required style="border: 2px solid #152732;">
+                <option value="" disabled selected>Seleccione un servicio</option>
+                <option value="diseño_grafico">Diseño Gráfico</option>
+                <option value="paginas_web">Páginas Web</option>
+                <option value="mantenimiento_web">Mantenimiento Web</option>
+                <option value="manejo_redes">Manejo de Redes Sociales</option>
+                <option value="otro">Otro</option>
+              </select>              
+            <br><br>
+            <label class="checkbox">
+              He leído y Acepto las <a href="politicas.html" target="_blank">Políticas de Privacidad</a>*
+            </label>
+              <input type="checkbox" id="aceptarPoliticas" required>
+              <input type="text" name="verificacion" style="display:none;">
+              <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+            
 
-              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">E-mail</h2>                
-              <p><a class="text-primary-hover" href="mailto:contact@sampledomain.com">contact@sampledomain.com</a></p>
-              <p><a class="text-primary-hover" href="mailto:office@sampledomain.com">office@sampledomain.com</a></p>               
 
-              <h2 class="text-size-20 margin-top-30 margin-bottom-10 text-strong text-uppercase text-dark">Phone Numbers</h2>                
-              <p>0800 4521 800 50</p>
-              <p>0450 5896 625 16</p>
-              <p>0798 6546 465 </p>               
+
             </div>
-
-            <iframe class="s-12 center" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d408353.5714751251!2d-118.71693940358037!3d33.79914670853249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2b4655ccd2001%3A0xa7f54b3bb5afde44!2s99+Aviation+Blvd%2C+Manhattan+Beach%2C+CA+90266%2C+Spojen%C3%A9+%C5%A1t%C3%A1ty+americk%C3%A9!5e0!3m2!1ssk!2ssk!4v1558635197012!5m2!1ssk!2ssk" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>  
-          </div>                  
 
         </section>
       </main>
       
        
       <!-- FOOTER -->
-      <footer class="grid">
+      <footer class="grid hide-m">
         <!-- Footer - top -->
         <!-- Image-->
-        <div class="s-12 l-3 m-row-3 margin-bottom background-image" style="background-image:url(img/img-04.jpg)"></div>
-        
-        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark">
-           <h2 class="text-strong text-uppercase">Who We Are?</h2>
-           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy.</p>
+        <div class="s-12 l-3 m-row-3 margin-bottom background-image  " style="background-image:url(img/desarrollador.png)">
         </div>
-        
-        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark">
-           <h2 class="text-strong text-uppercase">Where We Are?</h2>
-           <img class="full-img" src="img/map.svg" alt=""/>
+      
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-aqua">
+          <h2 class="text-strong text-uppercase">Quiénes Somos?</h2>
+          <p>Somos una agencia de soluciones digitales, dedicada a crear experiencias web únicas. Nuestro equipo,
+            conformado por egresados del SENA, combina creatividad y tecnología para ofrecer servicios web y otros servicios
+            relacionados.
+            Nos apasiona ayudar a nuestros clientes a destacar en el entorno digital, brindando
+            soporte constante y adaptándonos a sus necesidades de crecimiento.</p>
         </div>
-        
-        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-dark">
-           <h2 class="text-strong text-uppercase">Contact Us</h2>
-           <p><b class="text-primary margin-right-10">P</b> 0800 4521 800 50</p>
-           <p><b class="text-primary margin-right-10">M</b> <a class="text-primary-hover" href="mailto:contact@sampledomain.com">contact@sampledomain.com</a></p>
-           <p><b class="text-primary margin-right-10">M</b> <a class="text-primary-hover" href="mailto:office@sampledomain.com">office@sampledomain.com</a></p>
+      
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-aqua">
+          <h2 class="text-strong text-uppercase">Donde estamos?</h2>
+          <img class="full-img" src="img/map.svg" alt="" />
         </div>
-        
+      
+        <div class="s-12 m-9 l-3 padding-2x margin-bottom background-aqua contact-section">
+          <h2 class="text-strong text-uppercase">Contáctanos</h2>
+          <p>
+            <i class="icon-smartphone text-primary margin-right-10"></i> 317 7433903
+          </p>
+          <p class="correo">
+            <i class="icon-globe_black text-primary"></i>
+            <a class="text-primary-hover" href="mailto:impulsoWeb5@gmail.com">impulsoWeb@gmail.com</a>
+          </p>
+          <br>
+          <p class="whatsapp-icon">
+            <a href="https://api.whatsapp.com/send?phone=573177433903&text=Hola, Quisiera conocer más detalles sobre los servicios que brindan, especialmente en el área de:"
+              target="_blank" rel="noopener noreferrer">
+              <img src="./img/whatsapp-icon-2.png" alt="WhatsApp Icon">
+            </a>
+          </p>
+          <p class="whatsapp-icon">
+            <a href="https://www.instagram.com/alejandrocordoba795/" target="_blank" rel="noopener noreferrer">
+              <img src="./img/instagram-icon.png" alt="Instagram Icon">
+            </a>
+          </p>
+        </div>
+      
+      
+      
         <!-- Footer - bottom -->
         <div class="s-12 text-center margin-bottom">
-          <p class="text-size-12">Copyright 2019, Vision Design - graphic zoo</p>
-          <p class="text-size-12">All images have been purchased from Bigstock. Do not use the images in your website.</p>
-          <p><a class="text-size-12 text-primary-hover" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding by Responsee Team</a></p>
+          <p class="text-size-12">Copyright 2024, IMPULSO WEB</p>
+          <p class="text-size-12">Todas las imagenes son propiedad de IMPULSO WEB. Prohibido su uso no autorizado</p>
+          <p><a class="text-size-12 text-primary-hover" href="http://www.myresponsee.com"
+              title="Responsee - lightweight responsive framework">Design and coding by Responsee Team Editado por: IMPULSO
+              WEB, Alejandro Cordoba</a></p>
         </div>
-      </footer>      
+      </footer>
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
       <script type="text/javascript" src="js/template-scripts.js"></script>
