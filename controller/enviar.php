@@ -1,36 +1,51 @@
-
-
-
-
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '../vendor/autoload.php'; // Ajusta la ruta si es necesario
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "<pre>";
-    print_r($_POST);
-    echo "</pre>";
-    exit; // Detiene la ejecución para solo mostrar los datos enviados
-}
+    $nombre = $_POST["nombre"] ?? '';
+    $apellido = $_POST["apellido"] ?? '';
+    $telefono = $_POST["telefono"] ?? '';
+    $correo = $_POST["correo"] ?? '';
+    $servicio = $_POST["servicio"] ?? '';
 
-/*
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = htmlspecialchars($_POST["nombre"]);
-    $apellido = htmlspecialchars($_POST["apellido"]);
-    $telefono = htmlspecialchars($_POST["telefono"]);
-    $correo = htmlspecialchars($_POST["correo"]);
-    $servicio = htmlspecialchars($_POST["servicio"]);
+    $mail = new PHPMailer(true);
 
-    $para = "correo@ejemplo.com";
-    $asunto = "Nuevo contacto de formulario";
-    $mensaje = "Nombre: $nombre\nApellido: $apellido\nTeléfono: $telefono\nCorreo: $correo\nServicio: $servicio";
-    $cabeceras = "From: $correo";
+    try {
+        // Configuración del servidor SMTP de Gmail
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'impulso.codeydesign@gmail.com'; // Tu correo
+        $mail->Password = 'raja syhm mgrb aqkh'; 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
 
-    if (mail($para, $asunto, $mensaje, $cabeceras)) {
-        echo "Te contactaremos en el menor tiempo posible.";
-    } else {
-        echo "Error, inténtelo después.";
+        // Configuración del remitente y destinatario
+        $mail->setFrom('impulso.codeydesign@gmail.com', 'Impulso Code & Design');
+        $mail->addAddress('impulso.codeydesign@gmail.com'); // Recibes el mensaje en este correo
+
+        // Contenido del correo
+        $mail->isHTML(true);
+        $mail->Subject = 'Nuevo contacto desde la web';
+        $mail->Body = "
+            <h2>Nuevo mensaje de contacto</h2>
+            <p><strong>Nombre:</strong> $nombre $apellido</p>
+            <p><strong>Teléfono:</strong> $telefono</p>
+            <p><strong>Correo:</strong> $correo</p>
+            <p><strong>Servicio interesado:</strong> $servicio</p>
+        ";
+
+        // Enviar el correo
+        if ($mail->send()) {
+            echo "¡Mensaje enviado! Te contactaremos pronto.";
+        } else {
+            echo "Error al enviar el mensaje.";
+        }
+    } catch (Exception $e) {
+        echo "Error: {$mail->ErrorInfo}";
     }
-} else {
-    echo "Acceso no autorizado.";
 }
-    */
 ?>
-
