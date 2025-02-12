@@ -2,7 +2,8 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php'; // Ajusta la ruta si es necesario
+require '../vendor/autoload.php';
+require 'config.php'; // Archivo con las credenciales
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST["nombre"] ?? '';
@@ -11,41 +12,40 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $correo = $_POST["correo"] ?? '';
     $servicio = $_POST["servicio"] ?? '';
 
+    if (empty($nombre) || empty($apellido) || empty($telefono) || empty($correo) || empty($servicio)) {
+        echo "error_campos"; // Respuesta en caso de campos vacíos
+        exit;
+    }
+
     $mail = new PHPMailer(true);
 
     try {
-        // Configuración del servidor SMTP de Gmail
+        // Configuración del servidor SMTP
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'impulso.codeydesign@gmail.com'; // Tu correo
-        $mail->Password = 'raja syhm mgrb aqkh'; 
+        $mail->Username = SMTP_USER;
+        $mail->Password = SMTP_PASSWORD;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        // Configuración del remitente y destinatario
-        $mail->setFrom('impulso.codeydesign@gmail.com', 'Impulso Code & Design');
-        $mail->addAddress('impulso.codeydesign@gmail.com'); // Recibes el mensaje en este correo
+        // Configuración del correo
+        $mail->setFrom(SMTP_USER, 'Impulso Code & Design');
+        $mail->addAddress(SMTP_USER); // A quién se enviará el mensaje
+        $mail->Subject = 'Nuevo mensaje de contacto';
 
-        // Contenido del correo
-        $mail->isHTML(true);
-        $mail->Subject = 'Nuevo contacto desde la web';
-        $mail->Body = "
-            <h2>Nuevo mensaje de contacto</h2>
-            <p><strong>Nombre:</strong> $nombre $apellido</p>
-            <p><strong>Teléfono:</strong> $telefono</p>
-            <p><strong>Correo:</strong> $correo</p>
-            <p><strong>Servicio interesado:</strong> $servicio</p>
-        ";
+        // Cuerpo del correo
+        $mail->Body = "Nombre: $nombre\nApellido: $apellido\nTeléfono: $telefono\nCorreo: $correo\nServicio: $servicio";
 
         // Enviar el correo
         if ($mail->send()) {
-            echo "¡Mensaje enviado! Te contactaremos pronto.";
+            echo "success"; // Respuesta para JS
         } else {
-            echo "Error al enviar el mensaje.";
+            echo "error_envio";
         }
     } catch (Exception $e) {
-        echo "Error: {$mail->ErrorInfo}";
+        echo "error_servidor";
     }
 }
 ?>
+

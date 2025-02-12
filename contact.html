@@ -33,9 +33,10 @@
               <ul class="top-ul right chevron">
 
                 <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Paginas Web</a></li>
                 <li><a href="diseño.html">Diseño Grafico</a></li>
                 <li><a href="about-us.html">Quienes Somos</a></li>
-                <li><a href="Mantenimiento.html">Contacto</a></li>
+                
               </ul>
             </div>
         
@@ -56,6 +57,7 @@
           <div class="m-12 l-7 center">
             <h2>Déjanos tus datos y te contactaremos muy Pronto</h2>
             <form id="contactForm" class="mi-formulario" action="./controller/enviar.php" method="POST">
+
               <label for="nombre">Nombre:</label>
               <input type="text" id="nombre" name="nombre" required style="border: 2px solid #152732;">
             
@@ -90,7 +92,7 @@
 
 
             </div>
-
+        
         </section>
       </main>
       
@@ -123,7 +125,7 @@
           </p>
           <p class="correo">
             <i class="icon-globe_black text-primary"></i>
-            <a class="text-primary-hover" href="mailto:impulsoWeb5@gmail.com">impulsoWeb@gmail.com</a>
+            <a class="text-primary-hover" href="mailto:impulsoWeb5@gmail.com">impulso.codeydesign@gmail.com</a>
           </p>
           <br>
           <p class="whatsapp-icon">
@@ -133,7 +135,8 @@
             </a>
           </p>
           <p class="whatsapp-icon">
-            <a href="https://www.instagram.com/alejandrocordoba795/" target="_blank" rel="noopener noreferrer">
+            <!-- <a href="https://www.instagram.com/alejandrocordoba795/" target="_blank" rel="noopener noreferrer"> -->
+              <a href="Mantenimiento.html">
               <img src="./img/instagram-icon.png" alt="Instagram Icon">
             </a>
           </p>
@@ -152,6 +155,8 @@
       <script type="text/javascript" src="js/responsee.js"></script>
       <script type="text/javascript" src="owl-carousel/owl.carousel.js"></script>
       <script type="text/javascript" src="js/template-scripts.js"></script>
-      
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="./controller/confirmacion.js"></script>
+
    </body>
 </html>
