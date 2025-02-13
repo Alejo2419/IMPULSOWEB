@@ -1,8 +1,14 @@
 <?php
+
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require '../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
+
 require 'config.php'; // Archivo con las credenciales
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

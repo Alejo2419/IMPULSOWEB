@@ -3,7 +3,7 @@ document.getElementById("contactForm").addEventListener("submit", function (even
 
     let formData = new FormData(this);
 
-    fetch("./controller/enviar.php", {
+    fetch('/impulsoweb/controller/enviar.php', {
         method: "POST",
         body: formData,
     })
